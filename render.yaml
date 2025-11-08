@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: citizen-report-backend
+    env: node
+    plan: free
+    buildCommand: cd server && npm install && npm run build
+    startCommand: cd server && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      # Add your database and JWT secrets in Render dashboard
+      # DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASSWORD
+      # JWT_SECRET, JWT_EXPIRES_IN
+
